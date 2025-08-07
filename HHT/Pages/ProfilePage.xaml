@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HHT.Pages.ProfilePage"
+             Title="Profile"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20,40" Spacing="25">
+
+                <!-- Titre -->
+                <Label Text="Profile"
+                       FontSize="32"
+                       FontAttributes="Bold"
+                       TextColor="Black" />
+
+                <!-- Avatar, Nom, Statut -->
+                <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Center">
+                    <Image Source="camera_icon.png"
+                           HeightRequest="30"
+                           WidthRequest="30" />
+                    <StackLayout>
+                        <Label Text="{Binding FullName}"
+                               FontAttributes="Bold"
+                               TextColor="#4A4AFF"
+                               FontSize="16" />
+                        <StackLayout Orientation="Horizontal" Spacing="5">
+                            <Label Text="Online"
+                                   TextColor="Green"
+                                   FontSize="13" />
+                            <BoxView Color="Green"
+                                     WidthRequest="8"
+                                     HeightRequest="8"
+                                     CornerRadius="4"
+                                     VerticalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Champs de profil -->
+                <StackLayout Spacing="15">
+                    <Label Text="Username"
+                           FontAttributes="Bold"
+                           FontSize="14" />
+                    <Label Text="{Binding FullName}"
+                           TextColor="#4A4AFF" />
+
+                    <Label Text="First Name"
+                           FontAttributes="Bold"
+                           FontSize="14" />
+                    <Label Text="{Binding FirstName}" />
+
+                    <Label Text="Last Name"
+                           FontAttributes="Bold"
+                           FontSize="14" />
+                    <Label Text="{Binding LastName}" />
+
+                    <Label Text="Date of Birth"
+                           FontAttributes="Bold"
+                           FontSize="14" />
+                    <Label Text="{Binding DateOfBirth}" TextColor="#F44336" />
+                </StackLayout>
+
+                <!-- Bouton de déconnexion -->
+                <Button Text="Sign Out"
+                        TextColor="#4A4AFF"
+                        BorderColor="#4A4AFF"
+                        BorderWidth="1"
+                        CornerRadius="12"
+                        FontAttributes="Bold"
+                        HeightRequest="50"
+                        Clicked="OnSignOutClicked"
+                        HorizontalOptions="FillAndExpand"
+                        />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

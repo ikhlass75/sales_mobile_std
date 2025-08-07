@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="HHT.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:HHT.Pages"
+    Shell.FlyoutBehavior="Flyout"
+    FlyoutBackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#121212}"
+    TitleColor="{AppThemeBinding Light=#0000FF, Dark=#FFFFFF}">
+
+    <!-- En-tête personnalisé -->
+    <Shell.FlyoutHeader>
+        <Grid Padding="10" BackgroundColor="{AppThemeBinding Light=#18A0FB, Dark=#1E1E1E}">
+            <HorizontalStackLayout VerticalOptions="Center" Spacing="10">
+                <!-- Logo -->
+                <Image Source="snifly_logo.png"
+                       WidthRequest="50"
+                       HeightRequest="50"
+                       VerticalOptions="Center" />
+
+                <!-- Info utilisateur -->
+                <VerticalStackLayout Spacing="2">
+                    <Label x:Name="UserNameLabel"
+                           Text="Ikhlass Ryahi"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           TextColor="White" />
+
+                    <HorizontalStackLayout Spacing="4">
+                        <Label Text="Voir le profil"
+                               FontSize="12"
+                               TextColor="White"
+                               TextDecorations="Underline">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnProfileTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Text="➤" FontSize="12" TextColor="White" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!-- Pages principales -->
+    <ShellContent Title="Accueil" Route="home" Icon="icon_accueil.png">
+        <ShellContent.ContentTemplate>
+            <DataTemplate>
+                <pages:HomePage />
+            </DataTemplate>
+        </ShellContent.ContentTemplate>
+    </ShellContent>
+
+    <ShellContent Title="Clients" Route="clients" Icon="icon_client.png">
+        <ShellContent.ContentTemplate>
+            <DataTemplate>
+                <pages:ClientsPage />
+            </DataTemplate>
+        </ShellContent.ContentTemplate>
+    </ShellContent>
+
+    <ShellContent Title="Commandes" Route="commandes" Icon="icon_commande.png">
+        <ShellContent.ContentTemplate>
+            <DataTemplate>
+                <pages:CommandesPage />
+            </DataTemplate>
+        </ShellContent.ContentTemplate>
+    </ShellContent>
+
+    <ShellContent Title="Produits" Route="produits" Icon="icon_caddie.png">
+        <ShellContent.ContentTemplate>
+            <DataTemplate>
+                <pages:ProductsPage />
+            </DataTemplate>
+        </ShellContent.ContentTemplate>
+    </ShellContent>
+
+    <ShellContent Title="Stock" Route="stock" Icon="icon_stock.png">
+        <ShellContent.ContentTemplate>
+            <DataTemplate>
+                <pages:StockPage />
+            </DataTemplate>
+        </ShellContent.ContentTemplate>
+    </ShellContent>
+
+    <ShellContent Title="Promotions" Route="promotions" Icon="icon_promotion.png">
+        <ShellContent.ContentTemplate>
+            <DataTemplate>
+                <pages:PromotionsPage />
+            </DataTemplate>
+        </ShellContent.ContentTemplate>
+    </ShellContent>
+
+    <ShellContent Title="Paramètres" Route="parametres" Icon="icon_parametres.png">
+        <ShellContent.ContentTemplate>
+            <DataTemplate>
+                <pages:SettingsPage />
+            </DataTemplate>
+        </ShellContent.ContentTemplate>
+    </ShellContent>
+
+  
+
+    <!-- Déconnexion -->
+    <MenuItem Text="Se déconnecter"
+              Clicked="OnLogoutClicked"
+              IsDestructive="True">
+        <MenuItem.IconImageSource>
+            <FileImageSource File="icon_deconnexion.png" />
+        </MenuItem.IconImageSource>
+    </MenuItem>
+
+</Shell>

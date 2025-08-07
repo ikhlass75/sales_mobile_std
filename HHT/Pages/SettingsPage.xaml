@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="HHT.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Parametres"
+    BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">
+
+	<VerticalStackLayout Padding="20" Spacing="25">
+
+		<Label Text="Parametres"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+		<Switch x:Name="DarkModeSwitch"
+                IsToggled="False"
+                Toggled="OnDarkModeToggled" />
+		<Label Text="Mode sombre"
+               FontSize="18"
+               VerticalOptions="Center" />
+
+	</VerticalStackLayout>
+</ContentPage>

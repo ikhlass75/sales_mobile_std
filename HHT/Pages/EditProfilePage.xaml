@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HHT.Pages.EditProfilePage">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Label Text="Nom" FontSize="14" />
+        <Entry x:Name="NameEntry" Placeholder="Entrez votre nom" FontSize="16" />
+
+        <Label Text="Email" FontSize="14" />
+        <Entry x:Name="EmailEntry" Placeholder="Entrez votre email" FontSize="16" Keyboard="Email" />
+
+        <Button Text="Enregistrer"
+                BackgroundColor="#2196F3"
+                TextColor="White"
+                Clicked="OnSaveClicked" />
+
+        <Button Text="Annuler"
+                BackgroundColor="LightGray"
+                TextColor="Black"
+                Clicked="OnCancelClicked" />
+    </VerticalStackLayout>
+</ContentPage>
