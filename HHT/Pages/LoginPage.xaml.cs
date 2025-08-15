@@ -10,6 +10,9 @@ public partial class LoginPage : ContentPage
     public LoginPage()
     {
         InitializeComponent();
+        Shell.SetNavBarIsVisible(this, false);
+        Shell.SetBackButtonBehavior(this, new BackButtonBehavior { IsVisible = false });
+
     }
 
     private async void OnLoginClicked(object sender, EventArgs e)

@@ -11,6 +11,8 @@ namespace HHT.Pages
         public HomePage()
         {
             InitializeComponent();
+            this.Title = string.Empty;
+            
         }
     }
 }

@@ -4,7 +4,189 @@
              x:Class="HHT.Pages.ClientsPage"
              Title="Clients">
 
-    <VerticalStackLayout>
-        <Label Text="Page Clients" />
-    </VerticalStackLayout>
-</ContentPage>
+    
+
+        <ContentPage.Resources>
+            <!-- Style amélioré pour le bouton -->
+            <Style x:Key="DetailButtonStyle" TargetType="Button">
+                <Setter Property="Text" Value="Voir détails →"/>
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="TextColor" Value="#2196F3"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+        </ContentPage.Resources>
+
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="15">
+                <!-- Contenu existant inchangé -->
+                <Frame CornerRadius="20" Padding="0" HasShadow="False" BackgroundColor="#18A0FB" Margin="0,0,0,20">
+                    <SearchBar Placeholder="Rechercher un client..."
+               HeightRequest="40"
+               BackgroundColor="#18A0FB"
+               TextColor="White"
+               PlaceholderColor="White"
+               CancelButtonColor="White"/>
+                </Frame>
+
+
+                <Label Text="LISTE DE VOS 12 CLIENTS"
+       FontSize="13"
+       
+       Margin="0,0,0,0"/>
+
+
+                <!-- Liste des clients - Version corrigée -->
+                <VerticalStackLayout Spacing="10">
+                    <!-- Client 1 - Version corrigée -->
+                    <Frame BorderColor="#EEEEEE" 
+      CornerRadius="12"
+      Padding="15"
+      HasShadow="False"
+      HeightRequest="110">
+                        <Grid ColumnDefinitions="60,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="4">
+                            <Image Source="user.png"
+              WidthRequest="50"
+              HeightRequest="50"
+              Aspect="AspectFill"
+              Grid.RowSpan="3"/>
+
+                            <Label Text="Client2"
+              FontSize="16"
+              FontAttributes="Bold"
+              Grid.Column="1"/>
+
+                            <Label Text="Dernier achat : 12 juli"
+              FontSize="13"
+              TextColor="#666666"
+              Grid.Column="1"
+              Grid.Row="1"/>
+
+                            <Button Style="{StaticResource DetailButtonStyle}"
+                                    Clicked="OnVoirDetailsClicked"
+               Grid.Column="1"
+               Grid.Row="2"/>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Client 2 - Version corrigée -->
+                    <Frame BorderColor="#EEEEEE" 
+                     CornerRadius="12"
+                     Padding="15"
+                     HasShadow="False"
+                     HeightRequest="110">
+                        <Grid ColumnDefinitions="60,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="4">
+                            <Image Source="user_placeholder.png"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             Aspect="AspectFill"
+                             Grid.RowSpan="3"/>
+
+                            <Label Text="Client2"
+                             FontSize="16"
+                             FontAttributes="Bold"
+                             Grid.Column="1"/>
+
+                            <Label Text="Dernier achat : 12 juli"
+                             FontSize="13"
+                             TextColor="#666666"
+                             Grid.Column="1"
+                             Grid.Row="1"/>
+
+                            <Button Style="{StaticResource DetailButtonStyle}"
+                              Grid.Column="1"
+                              Grid.Row="2"/>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="#EEEEEE" 
+      CornerRadius="12"
+      Padding="15"
+      HasShadow="False"
+      HeightRequest="110">
+                        <Grid ColumnDefinitions="60,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="4">
+                            <Image Source="user_placeholder.png"
+              WidthRequest="50"
+              HeightRequest="50"
+              Aspect="AspectFill"
+              Grid.RowSpan="3"/>
+
+                            <Label Text="Client2"
+              FontSize="16"
+              FontAttributes="Bold"
+              Grid.Column="1"/>
+
+                            <Label Text="Dernier achat : 12 juli"
+              FontSize="13"
+              TextColor="#666666"
+              Grid.Column="1"
+              Grid.Row="1"/>
+
+                            <Button Style="{StaticResource DetailButtonStyle}"
+               Grid.Column="1"
+               Grid.Row="2"/>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="#EEEEEE" 
+      CornerRadius="12"
+      Padding="15"
+      HasShadow="False"
+      HeightRequest="110">
+                        <Grid ColumnDefinitions="60,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="4">
+                            <Image Source="user_placeholder.png"
+              WidthRequest="50"
+              HeightRequest="50"
+              Aspect="AspectFill"
+              Grid.RowSpan="3"/>
+
+                            <Label Text="Client2"
+              FontSize="16"
+              FontAttributes="Bold"
+              Grid.Column="1"/>
+
+                            <Label Text="Dernier achat : 12 juli"
+              FontSize="13"
+              TextColor="#666666"
+              Grid.Column="1"
+              Grid.Row="1"/>
+
+                            <Button Style="{StaticResource DetailButtonStyle}"
+               Grid.Column="1"
+               Grid.Row="2"/>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="#EEEEEE" 
+      CornerRadius="12"
+      Padding="15"
+      HasShadow="False"
+      HeightRequest="110">
+                        <Grid ColumnDefinitions="60,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="4">
+                            <Image Source="user_placeholder.png"
+              WidthRequest="50"
+              HeightRequest="50"
+              Aspect="AspectFill"
+              Grid.RowSpan="3"/>
+
+                            <Label Text="Client2"
+              FontSize="16"
+              FontAttributes="Bold"
+              Grid.Column="1"/>
+
+                            <Label Text="Dernier achat : 12 juli"
+              FontSize="13"
+              TextColor="#666666"
+              Grid.Column="1"
+              Grid.Row="1"/>
+
+                            <Button Style="{StaticResource DetailButtonStyle}"
+               Grid.Column="1"
+               Grid.Row="2"/>
+                        </Grid>
+                    </Frame>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage>

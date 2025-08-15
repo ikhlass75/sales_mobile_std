@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
-		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst;net9.0-windows10.0.19041.0</TargetFrameworks>
+<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
+<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 
 		<!-- Note for MacCatalyst:
@@ -57,6 +57,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\back_arrow.png" />
+	  <None Remove="Resources\Images\boisson.png" />
+	  <None Remove="Resources\Images\chocolat.png" />
+	  <None Remove="Resources\Images\delete_icon.png" />
+	  <None Remove="Resources\Images\dentifrice.png" />
+	  <None Remove="Resources\Images\edit1_icon.png" />
+	  <None Remove="Resources\Images\huile.png" />
+	  <None Remove="Resources\Images\limonade.png" />
+	  <None Remove="Resources\Images\location_icon.png" />
+	  <None Remove="Resources\Images\product.png" />
+	  <None Remove="Resources\Images\sales.png" />
+	  <None Remove="Resources\Images\sauce.png" />
+	  <None Remove="Resources\Images\savon.png" />
+	  <None Remove="Resources\Images\stock.png" />
+	  <None Remove="Resources\Images\thon.png" />
+	  <None Remove="Resources\Images\user.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
 		  <PrivateAssets>all</PrivateAssets>
@@ -80,13 +99,28 @@
 	  <MauiXaml Update="Pages\CommandesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\DetailClientPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\EditProfilePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\GpsActivationPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Objectives1Page.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\ObjectivesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\OrderDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\ProductsPage.xaml">
@@ -99,6 +133,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\SettingsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\SettlementDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\SplashPage.xaml">

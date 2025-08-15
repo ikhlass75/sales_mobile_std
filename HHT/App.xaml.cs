@@ -10,17 +10,17 @@ namespace HHT
         {
             InitializeComponent();
 
-            // Enregistrement des routes
-            Routing.RegisterRoute("splash", typeof(SplashPage));
-            Routing.RegisterRoute("login", typeof(LoginPage));
-            Routing.RegisterRoute("home", typeof(HomePage));
-            Routing.RegisterRoute("profile", typeof(ProfilePage));
-
             bool isDarkMode = Preferences.Default.Get("DarkModeEnabled", false);
             App.Current.UserAppTheme = isDarkMode ? AppTheme.Dark : AppTheme.Light;
 
-            // Affichage de la page de splash au lancement
             MainPage = new AppShell();
+
+            // Navigation asynchrone après initialisation
+            MainPage.Dispatcher.Dispatch(async () =>
+            {
+                await Shell.Current.GoToAsync("//splash");
+            });
         }
+
     }
 }

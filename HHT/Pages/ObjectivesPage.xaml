@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HHT.Pages.ObjectivesPage"
+             >
+    <Grid RowDefinitions="Auto,Auto,*,Auto" ColumnDefinitions="*">
+        <!-- Header + titre + description -->
+        <VerticalStackLayout Grid.Row="0" Spacing="5" HorizontalOptions="Center">
+            <Label Text="Mes objectifs"
+               FontSize="18"
+               FontAttributes="Bold"
+               TextColor="Black"    
+            HorizontalOptions="Center" />
+
+            <Frame HorizontalOptions="Center"
+               Padding="0"
+               BackgroundColor="Transparent"
+               BorderColor="Transparent"
+               WidthRequest="300">
+                <Label Text="Voici la liste de vos objectifs pour la journée sélectionnée."
+                   FontSize="14"
+                  TextColor="Black" 
+                    HorizontalTextAlignment="Center"
+                   LineBreakMode="WordWrap"/>
+            </Frame>
+
+            <!-- Navigation mois -->
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10" Margin="0,10,0,0">
+                <Button Text="◀" 
+                    Clicked="OnPreviousMonthClicked" 
+                    BackgroundColor="#036AC4" 
+                    TextColor="White" />
+                <Label x:Name="MonthLabel" 
+                   FontSize="18" 
+                   FontAttributes="Bold" 
+                   TextColor="#036AC4" />
+                <Button Text="▶" 
+                    Clicked="OnNextMonthClicked" 
+                    BackgroundColor="#036AC4" 
+                    TextColor="White" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+        <!-- Calendrier (jours) horizontal -->
+        <ScrollView Grid.Row="1" Orientation="Horizontal" HeightRequest="70" Margin="0,10,0,10">
+            <HorizontalStackLayout x:Name="CalendarDaysStack" Spacing="8" />
+        </ScrollView>
+
+        <!-- Liste des objectifs scrollable -->
+        <ScrollView Grid.Row="2" Margin="0,10" VerticalOptions="FillAndExpand">
+            <VerticalStackLayout x:Name="TaskList" Spacing="10" />
+        </ScrollView>
+
+        <!-- Bouton Ajouter objectif -->
+        <Button Grid.Row="3"
+            Text="+"
+            FontSize="24"
+            WidthRequest="50"
+            HeightRequest="50"
+            CornerRadius="30"
+            BackgroundColor="#036AC4"
+            TextColor="White"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Margin="0,10,0,20"
+            Clicked="OnAddTaskClicked"/>
+    </Grid>
+</ContentPage>

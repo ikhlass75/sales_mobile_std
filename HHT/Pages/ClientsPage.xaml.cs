@@ -15,5 +15,10 @@ namespace HHT.Pages
         {
             InitializeComponent();
         }
+        private async void OnVoirDetailsClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("clientDetails");
+        }
+         
     }
 }

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HHT.Pages.DetailClientPage"
+             Title="DetailClientPage">
+     
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+
+
+
+            <!-- Section 1: En-tête avec photo et infos -->
+            <Frame BackgroundColor="White"
+       Padding="20,30"
+       CornerRadius="0"
+       HasShadow="False">
+
+                <!-- Grille principale -->
+                <Grid ColumnDefinitions="80,*" RowSpacing="5">
+
+                    <!-- Zone image + bouton retour -->
+                    <Grid Grid.Column="0" Grid.RowSpan="2">
+                        <!-- Image ronde -->
+                        <Image Source="user.png"
+                   WidthRequest="70"
+                   HeightRequest="70"
+                   Aspect="AspectFill">
+                            <Image.Clip>
+                                <EllipseGeometry Center="35,35" RadiusX="35" RadiusY="35"/>
+                            </Image.Clip>
+                        </Image>
+
+                        <!-- Bouton retour placé par-dessus -->
+                         
+                    </Grid>
+
+                    <!-- Nom client -->
+                    <Label Text="Client1"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           Grid.Column="1"
+                           Grid.Row="0"/>
+
+                    <!-- Localisation -->
+                    <HorizontalStackLayout Grid.Column="1" Grid.Row="1" Spacing="5">
+                        <Image Source="location_icon.png"
+                               WidthRequest="16"
+                               HeightRequest="16"/>
+                        <Button Text="Localisation : Voir sur la carte"
+                               TextColor="Black"
+                               BackgroundColor="Transparent"
+                               HorizontalOptions="Start"
+                               Padding="0"
+                               FontSize="14"
+                               FontAttributes="None"/>
+                    </HorizontalStackLayout>
+                </Grid>
+            </Frame>
+
+            <!-- Section 2: Contact (téléphone + adresse) -->
+            <Frame BackgroundColor="White"
+                   Margin="0,2,0,0"
+                   Padding="20,15"
+                   CornerRadius="0"
+                   HasShadow="False">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" RowSpacing="15">
+                    <!-- Téléphone -->
+                    <VerticalStackLayout Grid.Column="0" Grid.Row="0" Spacing="5">
+                        <Label Text="Téléphone :"
+                               FontSize="14"
+                               FontAttributes="Bold"/>
+                        <Label Text="0078666544"
+                               FontSize="14"/>
+                    </VerticalStackLayout>
+
+                    <!-- Adresse -->
+                    <VerticalStackLayout Grid.Column="1" Grid.Row="0" Spacing="5">
+                        <Label Text="Adresse :"
+                               FontSize="14"
+                               FontAttributes="Bold"/>
+                        <Label Text="Cotobleneca, Moroc"
+                               FontSize="14"/>
+                    </VerticalStackLayout>
+
+                    <!-- Séparateur -->
+                     
+                </Grid>
+            </Frame>
+
+            <!-- Section 3: Les 3 dernières commandes -->
+            <Frame BackgroundColor="White"
+                   Margin="0,2,0,0"
+                   Padding="20,15"
+                   CornerRadius="0"
+                   HasShadow="False">
+                <VerticalStackLayout Spacing="15">
+                    <!-- Titre de la section -->
+                    <Label Text="Les 3 dernières commandes :"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
+
+                    <!-- Commande 1 -->
+                    <Frame BackgroundColor="White"
+                           Margin="0,0,0,0"
+                           Padding="15"
+                           CornerRadius="10"
+                           HasShadow="False">
+                        <VerticalStackLayout Spacing="10">
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="N°" FontSize="14" WidthRequest="120"/>
+                                <Label Text=":" FontSize="14"/>
+                                <Label Text="CMD-87532" FontSize="14" FontAttributes="Bold"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Date" FontSize="14" WidthRequest="120"/>
+                                <Label Text=":" FontSize="14"/>
+                                <Label Text="12 Juillet 2025" FontSize="14"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Montant" FontSize="14" WidthRequest="120"/>
+                                <Label Text=":" FontSize="14"/>
+                                <Label Text="460 MAD" FontSize="14" FontAttributes="Bold"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Nombre d'article" FontSize="14" WidthRequest="120"/>
+                                <Label Text=":" FontSize="14"/>
+                                <Label Text="5" FontSize="14"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Commande 2 -->
+                    <Frame BackgroundColor="White"
+                           Margin="0,0,0,0"
+                           Padding="15"
+                           CornerRadius="10"
+                           HasShadow="False">
+                        <VerticalStackLayout Spacing="10">
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="N°" FontSize="14" WidthRequest="120"/>
+                                <Label Text=":" FontSize="14"/>
+                                <Label Text="CMD-87532" FontSize="14" FontAttributes="Bold"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Date" FontSize="14" WidthRequest="120"/>
+                                <Label Text=":" FontSize="14"/>
+                                <Label Text="12 Juillet 2025" FontSize="14"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Montant" FontSize="14" WidthRequest="120"/>
+                                <Label Text=":" FontSize="14"/>
+                                <Label Text="460 MAD" FontSize="14" FontAttributes="Bold"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Nombre d'article" FontSize="14" WidthRequest="120"/>
+                                <Label Text=":" FontSize="14"/>
+                                <Label Text="5" FontSize="14"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Commande 3 -->
+                    <Frame BackgroundColor="White"
+                           Margin="0,0,0,0"
+                           Padding="15"
+                           CornerRadius="10"
+                           HasShadow="False">
+                        <VerticalStackLayout Spacing="10">
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="N°" FontSize="14" WidthRequest="120"/>
+                                <Label Text=":" FontSize="14"/>
+                                <Label Text="CMD-87532" FontSize="14" FontAttributes="Bold"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Date" FontSize="14" WidthRequest="120"/>
+                                <Label Text=":" FontSize="14"/>
+                                <Label Text="12 Juillet 2025" FontSize="14"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Montant" FontSize="14" WidthRequest="120"/>
+                                <Label Text=":" FontSize="14"/>
+                                <Label Text="460 MAD" FontSize="14" FontAttributes="Bold"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Nombre d'article" FontSize="14" WidthRequest="120"/>
+                                <Label Text=":" FontSize="14"/>
+                                <Label Text="5" FontSize="14"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Boutons en bas de section -->
+                    <Grid ColumnDefinitions="*,1.5*" Margin="0,0,0,0" ColumnSpacing="10">
+
+                        <Button Text="Les règlements"
+            TextColor=" black"
+            BackgroundColor="#18A0FB"
+            BorderColor="#2196F3"
+            BorderWidth="1"
+            CornerRadius="15"
+            FontSize="14"
+            FontAttributes="Bold"
+            Padding="10,5"
+            Grid.Column="0"
+                                Clicked="OnReglementClicked"/>
+
+                        <Button Text="Toutes les commandes"
+            TextColor="Black"
+            BackgroundColor="#18A0FB"
+            BorderColor="#2196F3"
+            BorderWidth="1"
+            CornerRadius="15"
+            FontSize="14"
+            FontAttributes="Bold"
+            Padding="10,5"
+            Grid.Column="1"
+                                Clicked="OnCommandeClicked"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

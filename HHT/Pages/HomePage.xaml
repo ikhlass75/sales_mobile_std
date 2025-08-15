@@ -4,7 +4,137 @@
              x:Class="HHT.Pages.HomePage"
              Title="Accueil">
 
-    <VerticalStackLayout Padding="20">
-        <Label Text="Bienvenue dans Snifly" FontSize="24" HorizontalOptions="Center"/>
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="20">
+
+            <!-- Barre de recherche -->
+
+            <!-- Carte Gestion de Stock -->
+            <Frame CornerRadius="20" Padding="20" BackgroundColor="#9CB5EE" HasShadow="False">
+                <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,Auto">
+                    <!-- Texte gauche -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Gestion de" FontSize="14" TextColor="Black"/>
+                        <Label Text="Stock" FontSize="24" FontAttributes="Bold" TextColor="Black"/>
+                        <Button Text="Accéder"
+                            BackgroundColor="#03314B"
+                            TextColor="White"
+                            CornerRadius="15"
+                            WidthRequest="120"
+                            HeightRequest="40"/>
+
+                    </VerticalStackLayout>
+
+                    <!-- Cercle à droite -->
+                    <Frame Grid.Column="1"
+   WidthRequest="80" HeightRequest="80"
+   CornerRadius="40"
+   BackgroundColor="White"
+   VerticalOptions="Center"
+   HorizontalOptions="Center"
+   Padding="0">
+                        <Image Source="snifly_logo.png"
+       WidthRequest="80"
+       HeightRequest="80"
+       Aspect="AspectFill"
+       HorizontalOptions="Center"
+       VerticalOptions="Center">
+                            <Image.Clip>
+                                <EllipseGeometry Center="40,40" RadiusX="40" RadiusY="40"/>
+                            </Image.Clip>
+                        </Image>
+                    </Frame>
+
+                </Grid>
+            </Frame>
+
+            <!-- Indicateur pagination -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                <BoxView WidthRequest="8" HeightRequest="8" Color="Blue" CornerRadius="4"/>
+                <BoxView WidthRequest="8" HeightRequest="8" Color="#CCCCCC" CornerRadius="4"/>
+                <BoxView WidthRequest="8" HeightRequest="8" Color="#CCCCCC" CornerRadius="4"/>
+                <BoxView WidthRequest="8" HeightRequest="8" Color="#CCCCCC" CornerRadius="4"/>
+            </HorizontalStackLayout>
+
+            <Grid ColumnDefinitions="*,Auto">
+                <Label Text="Statistiques" FontSize="18" FontAttributes="Bold"/>
+                <HorizontalStackLayout Grid.Column="1" Spacing="5" VerticalOptions="Center">
+
+                </HorizontalStackLayout>
+            </Grid>
+
+            <!-- Statistiques -->
+            <HorizontalStackLayout Spacing="35">
+                <Frame CornerRadius="10"
+   BackgroundColor="#036AC4"
+   Padding="20"
+   WidthRequest="98"   
+                HorizontalOptions="Center">
+                    <VerticalStackLayout HorizontalOptions="Center" Spacing="3">
+                        <Image Source="product.png" WidthRequest="30" HeightRequest="30"/>
+                        <Label Text="200" FontSize="20" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"/>
+                        <Label Text="Produits" FontSize="14" TextColor="White" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+
+                <Frame CornerRadius="10"
+   BackgroundColor="#036AC4"
+   Padding="20"
+   WidthRequest="95"   
+                HorizontalOptions="Center">
+                    <VerticalStackLayout HorizontalOptions="Center" Spacing="3">
+                        <Image Source="stock.png" WidthRequest="30" HeightRequest="30"/>
+                        <Label Text="200" FontSize="20" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"/>
+                        <Label Text="Stock" FontSize="14" TextColor="White" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame CornerRadius="10"
+   BackgroundColor="#036AC4"
+   Padding="20"
+   WidthRequest="95"  
+                HorizontalOptions="Center">
+                    <VerticalStackLayout HorizontalOptions="Center" Spacing="3">
+                        <Image Source="sales.png" WidthRequest="30" HeightRequest="30"/>
+                        <Label Text="20" FontSize="20" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"/>
+                        <Label Text="Vente" FontSize="14" TextColor="White" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </HorizontalStackLayout>
+
+            <!-- Liste des fournisseurs -->
+            <Grid ColumnDefinitions="*,Auto">
+                <Label Text="Les fournisseurs" FontSize="18" FontAttributes="Bold"/>
+                <HorizontalStackLayout Grid.Column="1" Spacing="5" VerticalOptions="Center">
+                    <Label Text="Voir tous" FontSize="14" TextColor="Gray"/>
+                    <Label Text="➤" FontSize="14" TextColor="Blue"/>
+                </HorizontalStackLayout>
+            </Grid>
+
+            <!-- Fournisseur 1 -->
+            <Frame CornerRadius="10" BackgroundColor="White" Padding="10" HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="icon_user.png" WidthRequest="40" HeightRequest="40"/>
+                    <VerticalStackLayout>
+                        <Label Text="Fournisseur1" FontAttributes="Bold" FontSize="14"/>
+                        <Label Text="Nom: ..." FontSize="12" TextColor="Gray"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- Fournisseur 2 -->
+            <Frame CornerRadius="10" BackgroundColor="White" Padding="10" HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="icon_user.png" WidthRequest="40" HeightRequest="40"/>
+                    <VerticalStackLayout>
+                        <Label Text="Fournisseur2" FontAttributes="Bold" FontSize="14"/>
+                        <Label Text="Nom: ..." FontSize="12" TextColor="Gray"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

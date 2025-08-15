@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HHT.Pages.GpsActivationPage"
+             Title="GpsActivationPage">
+     
+
+        <ScrollView>
+            <StackLayout Padding="50" Spacing="40">
+                <!-- Logo Snifly en haut -->
+                <Image Source="snifly_logo.png" 
+                   HeightRequest="220" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Start" />
+
+
+
+                <!-- Titre "Activer votre GPS" -->
+                <Label Text="Activer votre GPS"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+                <Label Text="Pour continuer, veuillez activer les services de localisation (GPS) de votre appareil."
+                   FontSize="16"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+                <!-- Bouton -->
+                <Button Text="Vérifier et Continuer  ->"
+                    BackgroundColor="#036AC4"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HorizontalOptions="Fill"
+                    HeightRequest="50"
+                    Margin="0,40,0,0" Clicked="BtnVerifier_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage>

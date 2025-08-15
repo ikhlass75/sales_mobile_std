@@ -43,6 +43,14 @@
     </Shell.FlyoutHeader>
 
     <!-- Pages principales -->
+    <ShellContent Route="splash">
+        <ShellContent.ContentTemplate>
+            <DataTemplate>
+                <pages:SplashPage />
+            </DataTemplate>
+        </ShellContent.ContentTemplate>
+    </ShellContent>
+    
     <ShellContent Title="Accueil" Route="home" Icon="icon_accueil.png">
         <ShellContent.ContentTemplate>
             <DataTemplate>
@@ -99,7 +107,23 @@
         </ShellContent.ContentTemplate>
     </ShellContent>
 
-  
+    <ShellContent Title="Objectifs" Route="Objectives" Icon="icon_objectifs.png">
+        <ShellContent.ContentTemplate>
+            <DataTemplate>
+                <pages:ObjectivesPage />
+            </DataTemplate>
+        </ShellContent.ContentTemplate>
+    </ShellContent>
+
+    <ShellContent Title="Objectives1Page" Route="Objectives1" Icon="icon_objectifs.png">
+        <ShellContent.ContentTemplate>
+            <DataTemplate>
+                <pages:Objectives1Page />
+            </DataTemplate>
+        </ShellContent.ContentTemplate>
+    </ShellContent>
+
+
 
     <!-- Déconnexion -->
     <MenuItem Text="Se déconnecter"
