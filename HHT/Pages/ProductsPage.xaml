@@ -1,7 +1,108 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="HHT.Pages.ProductsPage">
-	<Label Text="Page Produits" VerticalOptions="Center" HorizontalOptions="Center"/>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HHT.Pages.ProductsPage"
+             Title="Catégories"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowSpacing="0">
+        <!-- En-tête -->
+        <Grid Padding="15" BackgroundColor="{AppThemeBinding Light=White, Dark=Black}" RowDefinitions="Auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="icon_back.png" HeightRequest="24" WidthRequest="24">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label Text="Catégories"
+                   Grid.Column="1"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="Black" />
+        </Grid>
+
+        <!-- Liste des catégories -->
+        <ScrollView Grid.Row="1" Padding="10,0">
+            <VerticalStackLayout Spacing="10">
+
+                <!-- Produits laitiers -->
+                <Frame CornerRadius="12" Padding="0" HasShadow="False" BackgroundColor="#009EFF">
+                    <Grid ColumnDefinitions="100,*" Padding="10">
+                        <Image Source="produits_laitiers.jpg" Aspect="AspectFill" HeightRequest="80" WidthRequest="80"/>
+                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="Produits laitiers" TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="18" FontAttributes="Bold"/>
+                            <Label Text="Lait / Yaourt / Fromage..." TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="14"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produits sucrés -->
+                <Frame CornerRadius="12" Padding="0" HasShadow="False" BackgroundColor="#009EFF">
+                    <Grid ColumnDefinitions="100,*" Padding="10">
+                        <Image Source="produits_sucres.jpg" Aspect="AspectFill" HeightRequest="80" WidthRequest="80"/>
+                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="Produits sucrés" TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="18" FontAttributes="Bold"/>
+                            <Label Text="Biscuits / Chocolat / Biscuits..." TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="14"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Épicerie salée -->
+                <Frame CornerRadius="12" Padding="0" HasShadow="False" BackgroundColor="#009EFF">
+                    <Grid ColumnDefinitions="100,*" Padding="10">
+                        <Image Source="epicerie_salee.jpg" Aspect="AspectFill" HeightRequest="80" WidthRequest="80"/>
+                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="Épicerie salée" TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="18" FontAttributes="Bold"/>
+                            <Label Text="Riz / Pâtes / Conserves..." TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="14"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produits d’hygiène (clic pour ouvrir HygienePage) -->
+                <Frame CornerRadius="12" Padding="0" HasShadow="False" BackgroundColor="#009EFF">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="HygieneTapped"/>
+                    </Frame.GestureRecognizers>
+                    <Grid ColumnDefinitions="100,*" Padding="10">
+                        <Image Source="produits_hygiene.jpg" Aspect="AspectFill" HeightRequest="80" WidthRequest="80"/>
+                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="Produits d’hygiène" TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="18" FontAttributes="Bold"/>
+                            <Label Text="Savon / Shampooing / Gel douche..." TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="14"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Boissons -->
+                <Frame CornerRadius="12" Padding="0" HasShadow="False" BackgroundColor="#009EFF">
+                    <Grid ColumnDefinitions="100,*" Padding="10">
+                        <Image Source="boissons.jpg" Aspect="AspectFill" HeightRequest="80" WidthRequest="80"/>
+                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="Boissons" TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="18" FontAttributes="Bold"/>
+                            <Label Text="Jus / Eau minérale / Soda..." TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="14"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Conserves et sauces -->
+                <Frame CornerRadius="12" Padding="0" HasShadow="False" BackgroundColor="#009EFF">
+                    <Grid ColumnDefinitions="100,*" Padding="10">
+                        <Image Source="conserves_sauces.jpg" Aspect="AspectFill" HeightRequest="80" WidthRequest="80"/>
+                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="Conserves et sauces" TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="18" FontAttributes="Bold"/>
+                            <Label Text="Conserve de thon / Ketchup..." TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="14"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

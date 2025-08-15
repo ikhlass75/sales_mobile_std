@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HHT.Pages.HygienePage"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">
+
+    <!-- Grid pour permettre au ScrollView de défiler -->
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Barre supérieure avec flèche et titre -->
+        <Grid Padding="5" ColumnDefinitions="Auto,*" Grid.Row="0">
+            <!-- Flèche retour -->
+            <Label Text="←"
+                   FontSize="28"
+                   TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                   VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BackButton_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Titre -->
+            <Label Grid.Column="1"
+                   Text="Hygiène et entretien"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="Blue"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"
+                   Margin="10,0,0,0"/>
+        </Grid>
+
+        <!-- Liste des produits -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="10" Spacing="10">
+
+                <!-- Produit : Dentifrice -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="dentifrice.png" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Dentifrice" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="WhiteCare" FontSize="12" TextColor="Black"/>
+                            <Label Text="Dentifrice pour dents blanches et saines" FontSize="12" TextColor="Gray"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+								<HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+ </HorizontalStackLayout>
+                                <!-- 4 autres étoiles identiques -->
+                            </HorizontalStackLayout>
+                            <Label Text="15.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Savon -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="savon.png" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Savon" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="PureClean" FontSize="12" TextColor="Black"/>
+                            <Label Text="Savon doux pour la peau" FontSize="12" TextColor="Gray"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <!-- étoiles identiques -->
+							<HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+ </HorizontalStackLayout>
+                            </HorizontalStackLayout>
+                            <Label Text="12.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Shampoing -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="shampooing.jpg" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Shampoing" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="HairCare" FontSize="12" TextColor="Black"/>
+                            <Label Text="Soin complet pour cheveux" FontSize="12" TextColor="Gray"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <!-- étoiles identiques -->
+							<HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+ </HorizontalStackLayout>
+                            </HorizontalStackLayout>
+                            <Label Text="30.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Brosse à dents -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="brosse_dents.jpg" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Brosse à dents" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="OralCare" FontSize="12" TextColor="Black"/>
+                            <Label Text="Brosse douce pour gencives sensibles" FontSize="12" TextColor="Gray"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <!-- étoiles identiques -->
+							<HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+ </HorizontalStackLayout>
+                            </HorizontalStackLayout>
+                            <Label Text="10.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Gel douche -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="gel_douche.jpg" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Gel douche" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="FreshBath" FontSize="12" TextColor="Black"/>
+                            <Label Text="Nettoyant doux pour la peau" FontSize="12" TextColor="Gray"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <!-- étoiles identiques -->
+							<HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+ </HorizontalStackLayout>
+                            </HorizontalStackLayout>
+                            <Label Text="18.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Lingettes nettoyantes -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="lingettes.jpg" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Lingettes nettoyantes" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="CleanWipe" FontSize="12" TextColor="Black"/>
+                            <Label Text="Lingettes pratiques pour mains et surfaces" FontSize="12" TextColor="Gray"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <!-- étoiles identiques -->
+							<HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+ </HorizontalStackLayout>
+                            </HorizontalStackLayout>
+                            <Label Text="8.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Vaseline -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="vaseline.jpg" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Vaseline" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="SoftCare" FontSize="12" TextColor="Black"/>
+                            <Label Text="Hydratation intense pour peau sèche" FontSize="12" TextColor="Gray"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <!-- étoiles identiques -->
+							<HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+ </HorizontalStackLayout>
+                            </HorizontalStackLayout>
+                            <Label Text="20.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Mouchoirs -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="mouchoirs.jpg" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Mouchoirs" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="SoftTissue" FontSize="12" TextColor="Black"/>
+                            <Label Text="Mouchoirs doux et résistants" FontSize="12" TextColor="Gray"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <!-- étoiles identiques -->
+							<HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+         <Image.GestureRecognizers>
+             <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+         </Image.GestureRecognizers>
+     </Image>
+ </HorizontalStackLayout>
+                            </HorizontalStackLayout>
+                            <Label Text="5.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>
