@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HHT.Pages.LaitiersPages"
+             BackgroundColor= "{AppThemeBinding Light=White, Dark=Black}">
+
+    <!-- Grid principale -->
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Barre supérieure -->
+        <Grid Padding="5" ColumnDefinitions="Auto,*" Grid.Row="0">
+            <!-- Bouton retour -->
+            <Label Text="←"
+                   FontSize="28"
+                   TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                   VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BackButton_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Titre -->
+            <Label Grid.Column="1"
+                   Text="Produits Laitiers"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="Blue"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"
+                   Margin="10,0,0,0"/>
+        </Grid>
+
+        <!-- Liste des produits -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="10" Spacing="10">
+
+                <!-- Produit : Lait -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="lait.jpg" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Lait" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="FreshMilk" FontSize="12" TextColor="Black"/>
+                            <Label Text="Lait frais et naturel" FontSize="12" TextColor="Gray"/>
+                            <Label Text="12.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </HorizontalStackLayout>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Fromage -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="fromage.jpg" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Fromage" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="CheeseLand" FontSize="12" TextColor="Black"/>
+                            <Label Text="Fromage tendre et savoureux" FontSize="12" TextColor="Gray"/>
+                            <Label Text="35.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </HorizontalStackLayout>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Yaourt -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="yoghurt.png" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Yaourt" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="YummyYogurt" FontSize="12" TextColor="Black"/>
+                            <Label Text="Yaourt onctueux nature" FontSize="12" TextColor="Gray"/>
+                            <Label Text="5.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </HorizontalStackLayout>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Beurre -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="beurre.jpg" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Beurre" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="GoldenButter" FontSize="12" TextColor="Black"/>
+                            <Label Text="Beurre pur et crémeux" FontSize="12" TextColor="Gray"/>
+                            <Label Text="20.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </HorizontalStackLayout>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Crème fraîche -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="creme_fraiche.jpg" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Crème fraîche" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="CreamyFresh" FontSize="12" TextColor="Black"/>
+                            <Label Text="Crème onctueuse idéale pour la cuisine" FontSize="12" TextColor="Gray"/>
+                            <Label Text="18.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </HorizontalStackLayout>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Fromage blanc -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="fromage_blanc.jpg" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Fromage blanc" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="SoftCheese" FontSize="12" TextColor="Black"/>
+                            <Label Text="Délicieux et léger" FontSize="12" TextColor="Gray"/>
+                            <Label Text="10.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </HorizontalStackLayout>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Produit : Lait fermenté -->
+                <Frame CornerRadius="12" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Grid ColumnDefinitions="80,*">
+                        <Image Source="lben.jpg" HeightRequest="60" WidthRequest="60"/>
+                        <StackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                            <Label Text="Lait fermenté (Lben)" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="TradMilk" FontSize="12" TextColor="Black"/>
+                            <Label Text="Boisson traditionnelle rafraîchissante" FontSize="12" TextColor="Gray"/>
+                            <Label Text="7.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
+                            <HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </HorizontalStackLayout>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>

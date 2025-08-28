@@ -48,38 +48,13 @@
                                         <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
                                     </Image.GestureRecognizers>
                                 </Image>
-								<HorizontalStackLayout Spacing="2" Margin="0,2,0,2">
-     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
-         <Image.GestureRecognizers>
-             <TapGestureRecognizer CommandParameter="1" Tapped="OnProductStarTapped"/>
-         </Image.GestureRecognizers>
-     </Image>
-     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
-         <Image.GestureRecognizers>
-             <TapGestureRecognizer CommandParameter="2" Tapped="OnProductStarTapped"/>
-         </Image.GestureRecognizers>
-     </Image>
-     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
-         <Image.GestureRecognizers>
-             <TapGestureRecognizer CommandParameter="3" Tapped="OnProductStarTapped"/>
-         </Image.GestureRecognizers>
-     </Image>
-     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
-         <Image.GestureRecognizers>
-             <TapGestureRecognizer CommandParameter="4" Tapped="OnProductStarTapped"/>
-         </Image.GestureRecognizers>
-     </Image>
-     <Image Source="star_outline.png" HeightRequest="20" WidthRequest="20">
-         <Image.GestureRecognizers>
-             <TapGestureRecognizer CommandParameter="5" Tapped="OnProductStarTapped"/>
-         </Image.GestureRecognizers>
-     </Image>
- </HorizontalStackLayout>
-                                <!-- 4 autres étoiles identiques -->
                             </HorizontalStackLayout>
                             <Label Text="15.00 MAD" TextColor="Blue" FontAttributes="Bold"/>
                         </StackLayout>
                     </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnDentifriceTapped"/>
+                    </Frame.GestureRecognizers>
                 </Frame>
 
                 <!-- Produit : Savon -->

@@ -2,70 +2,134 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HHT.Pages.PromotionsPage"
-             Title="Nos Promotions"
-             BackgroundColor="White">
+             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
+             Title="Nos Promotions">
 
-    <ContentPage.Content>
-        <StackLayout Padding="20,40,20,0">
+    <Grid RowDefinitions="Auto,Auto,*">
+
+        <!-- Header -->
+        <Grid Padding="10" ColumnDefinitions="Auto,*,Auto" Grid.Row="0">
+            <!-- Retour -->
+            <Label Text="←" FontSize="28"
+                   VerticalOptions="Center"
+                   TextColor="{AppThemeBinding Light=Black, Dark=White}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BackButton_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
             <!-- Titre -->
-            <Label Text="Nos Promotions"
+            <Label Grid.Column="1"
+                   Text="Nos Promotions"
                    FontSize="24"
                    FontAttributes="Bold"
-                   Margin="0,0,0,10"/>
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
 
-            <!-- Barre de recherche et filtre -->
-            <Grid ColumnSpacing="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+            <!-- Menu -->
+            <Image Grid.Column="2"
+                   Source="menu.png"
+                   HeightRequest="24"
+                   WidthRequest="24"
+                   VerticalOptions="Center"/>
+        </Grid>
 
-                <SearchBar Placeholder="Chercher"
-                           BackgroundColor="#F0F0F0"
-                           Margin="0"
-                           Grid.Column="0"
-                           HeightRequest="40" />
-
-                <ImageButton Source="filter_icon.png"
-                             BackgroundColor="#F0F0F0"
-                             CornerRadius="20"
-                             HeightRequest="40"
-                             WidthRequest="40"
-                             Grid.Column="1" />
+        <!-- Barre de recherche -->
+        <Frame Grid.Row="1"
+               Margin="10"
+               Padding="5"
+               CornerRadius="12"
+               BorderColor="LightGray"
+               HasShadow="False">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="6">
+                <Image Source="search.png"
+                       WidthRequest="20"
+                       HeightRequest="20"
+                       VerticalOptions="Center"
+                       Margin="5,0"/>
+                <!-- Utilise SearchBar pour capter la touche Entrée (Search) -->
+                <SearchBar x:Name="SearchEntry"
+                           Grid.Column="1"
+                           Placeholder="Chercher un produit"
+                           FontSize="14"
+                           SearchButtonPressed="OnSearchButtonPressed"
+                           TextChanged="OnSearchTextChanged"/>
             </Grid>
+        </Frame>
 
-            <!-- Grille de produits -->
-            <CollectionView ItemsSource="{Binding Promotions}"
-                            Margin="0,20,0,0">
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical"
-                                     Span="3"
-                                     VerticalItemSpacing="15"
-                                     HorizontalItemSpacing="10" />
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame BorderColor="#DDD" CornerRadius="10" Padding="10">
-                            <StackLayout>
-                                <Image Source="{Binding Image}"
-                                       HeightRequest="60"
-                                       Aspect="AspectFit" />
-                                <Label Text="{Binding Name}"
-                                       FontSize="14"
+        <!-- Liste des promotions -->
+        <CollectionView Grid.Row="2"
+                        Margin="10"
+                        ItemsLayout="VerticalGrid, 2"
+                        x:Name="PromosCollection">
+            <CollectionView.EmptyView>
+                <VerticalStackLayout Padding="20" Spacing="8" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image Source="notfound.png" WidthRequest="72" HeightRequest="72"/>
+                    <Label Text="Aucun produit trouvé"
+                           FontAttributes="Bold"
+                           FontSize="14"
+                           TextColor="{AppThemeBinding Light=#333333, Dark=#DDDDDD}"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Essayez un autre mot-clé."
+                           FontSize="12"
+                           TextColor="Gray"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="12" Padding="10" Margin="5"
+                           HasShadow="True"
+                           BackgroundColor="White">
+                        <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+
+                            <!-- Image produit -->
+                            <Image Source="{Binding Image}"
+                                   HeightRequest="80"
+                                   Aspect="AspectFit"/>
+
+                            <!-- Nom produit -->
+                            <Label Text="{Binding Name}"
+                                   FontAttributes="Bold"
+                                   FontSize="14"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"/>
+
+                            <!-- Prix -->
+                            <Label Text="{Binding Price}"
+                                   FontSize="13"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"/>
+
+                            <!-- Réduction -->
+                            <Frame Padding="2" CornerRadius="6"
+                                   BackgroundColor="#E6F0FF"
+                                   HorizontalOptions="Center">
+                                <Label Text="{Binding Discount}"
                                        FontAttributes="Bold"
-                                       LineBreakMode="TailTruncation"
-                                       MaxLines="1"/>
-                                <Label Text="{Binding Price}"
                                        FontSize="12"
-                                       TextColor="Gray" />
-                                <Image Source="discount_50.png"
-                                       HeightRequest="20"
-                                       WidthRequest="40" />
-                            </StackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </StackLayout>
-    </ContentPage.Content>
+                                       TextColor="Blue"/>
+                            </Frame>
+
+                            <!-- Boutons coeur + panier -->
+                            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                                <Image Source="heart.png" WidthRequest="20" HeightRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnFavoriteTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="cart.png" WidthRequest="20" HeightRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnAddToCartTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
 </ContentPage>

@@ -1,6 +1,4 @@
-﻿using HHT.Models;
-using Microsoft.Maui.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HHT.Pages
 {
-    public partial class HygienePage : ContentPage
+    public partial class LaitiersPages : ContentPage
     {
-        public HygienePage()
+        public LaitiersPages()
         {
             InitializeComponent();
         }
@@ -36,22 +34,6 @@ namespace HHT.Pages
                     }
                 }
             }
-        }
-        private async void OnDentifriceTapped(object sender, EventArgs e)
-        {
-            var product = new Product
-            {
-                Name = "Dentifrice",
-                Brand = "WhiteCare",
-                Description = "Dentifrice pour dents blanches et saines",
-                ImagePath = "dentifrice.png",
-                Price = 15.00,
-                Stock = 120,
-                Sold = 40,
-                Rating = 4
-            };
-
-            await Navigation.PushAsync(new ProductDetailPage(product));
         }
     }
 }

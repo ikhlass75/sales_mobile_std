@@ -1,9 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HHT.Pages.StockPage"
-             Title="Stocks">
+             Title="Gestion du Stock"
+             BackgroundColor="White">
 
-    <VerticalStackLayout>
-        <Label Text="Page Stock" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="Auto, Auto, *" Padding="10">
+
+        <!-- Barre de recherche + bouton ajouter -->
+        <Grid ColumnDefinitions="*,Auto" Grid.Row="0" Margin="0,0,0,10">
+            <SearchBar x:Name="ProductSearchBar"
+                       Placeholder="Rechercher un produit..."
+                       TextChanged="OnSearchTextChanged"
+                       Grid.Column="0"/>
+            <Button Text="＋"
+                    Grid.Column="1"
+                    BackgroundColor="#1565C0"
+                    TextColor="White"
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    CornerRadius="20"
+                    Clicked="OnAddProductClicked"/>
+        </Grid>
+
+        <!-- Message recherche -->
+        <Label x:Name="SearchMessage"
+               Text=""
+               TextColor="Red"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Grid.Row="1"
+               IsVisible="False"/>
+
+        <!-- Liste des produits -->
+        <CollectionView x:Name="StockCollection" Grid.Row="2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5"
+                           Padding="10"
+                           BorderColor="LightGray"
+                           CornerRadius="15"
+                           HasShadow="True">
+                        <Grid ColumnDefinitions="Auto,*,Auto" 
+                              RowDefinitions="Auto,Auto,Auto,Auto">
+
+                            <!-- Image produit -->
+                            <Image Source="{Binding ImagePath}"
+                                   WidthRequest="60"
+                                   HeightRequest="60"
+                                   Grid.RowSpan="4"
+                                   Margin="5"/>
+
+                            <!-- Nom -->
+                            <Label Text="{Binding Name}" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   Grid.Column="1" Grid.Row="0"/>
+
+                            <!-- Catégorie -->
+                            <Label Text="{Binding Category}" 
+                                   FontSize="12" 
+                                   TextColor="Gray" 
+                                   Grid.Column="1" Grid.Row="1"/>
+
+                            <!-- Description -->
+                            <Label Text="{Binding Description}" 
+                                   FontSize="12" 
+                                   TextColor="Black" 
+                                   Grid.Column="1" Grid.Row="2"/>
+
+                            <!-- Infos quantitatives -->
+                            <StackLayout Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"
+                                         Orientation="Horizontal" Spacing="20">
+                                <Label Text="{Binding Quantity, StringFormat='Stock: {0}'}" FontSize="12"/>
+                                <Label Text="{Binding Sold, StringFormat='Vendu: {0}'}" FontSize="12"/>
+                                <Label Text="{Binding Price, StringFormat='Prix: {0} DH'}" FontSize="12"/>
+                            </StackLayout>
+
+                            <!-- Boutons Modifier / Supprimer -->
+                            <StackLayout Grid.Column="2" Grid.RowSpan="4" Spacing="5">
+                                <Button Text="✏ Modifier" FontSize="12" 
+                                        BackgroundColor="#1976D2" TextColor="White"
+                                        Clicked="OnEditProductClicked"/>
+                                <Button Text="🗑 Supprimer" FontSize="12" 
+                                        BackgroundColor="#D32F2F" TextColor="White"
+                                        Clicked="OnDeleteProductClicked"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

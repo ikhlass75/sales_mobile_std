@@ -20,7 +20,8 @@ namespace HHT
             {
                 await Shell.Current.GoToAsync("//splash");
             });
-        }
+            Routing.RegisterRoute(nameof(ProductDetailPage), typeof(ProductDetailPage));
 
+        }
     }
 }

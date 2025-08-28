@@ -1,10 +1,33 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HHT.Pages.CommandesPage"
-             Title="Commandes">
+             Title="Commandes"
+             BackgroundColor="White">
 
-    <VerticalStackLayout Padding="20">
-        <Label Text="Page Commandes" FontSize="24" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <CollectionView ItemsSource="{Binding Commandes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Stroke="#CCCCCC"
+                            StrokeShape="RoundRectangle 10"
+                            StrokeThickness="1"
+                            Padding="10"
+                            Margin="10">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding ClientNom}"
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                   TextColor="Blue"/>
+                            <Label Text="{Binding DateCommande, StringFormat='Le {0:dd/MM/yyyy}'}"
+                                   FontSize="14"
+                                   TextColor="Gray"/>
+                            <Label Text="{Binding ProduitsCommandes}"
+                                   FontSize="14"
+                                   TextColor="Black"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ScrollView>
 </ContentPage>

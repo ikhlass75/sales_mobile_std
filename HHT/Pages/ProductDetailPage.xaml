@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HHT.Pages.ProductDetailPage"
+             Title="Détail du produit"
+             BackgroundColor="White">
+
+	<ScrollView>
+		<VerticalStackLayout Padding="20" Spacing="15">
+
+			<!-- Image du produit -->
+			<Image x:Name="ProductImage" HeightRequest="200" Aspect="AspectFit" />
+
+			<!-- Nom du produit -->
+			<Label x:Name="ProductName" FontSize="24" FontAttributes="Bold" TextColor="Black" />
+
+			<!-- Marque -->
+			<Label x:Name="ProductBrand" FontSize="18" TextColor="Gray" />
+
+			<!-- Description -->
+			<Label x:Name="ProductDescription" FontSize="16" TextColor="Black" />
+
+			<!-- Prix -->
+			<Label x:Name="ProductPrice" FontSize="18" TextColor="Green" />
+
+			<!-- Stock -->
+			<Label x:Name="ProductStock" FontSize="16" TextColor="Black" />
+
+			<!-- Nombre vendu -->
+			<Label x:Name="ProductSold" FontSize="16" TextColor="Black" />
+
+			<!-- Note -->
+			<Label x:Name="ProductRating" FontSize="18" TextColor="Gold" />
+
+			<!-- Boutons -->
+			<Button Text="Ajouter 10 au stock" Clicked="OnUpdateStockClicked" />
+			<Button Text="Vendre 1 produit" Clicked="OnAddSaleClicked" />
+
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

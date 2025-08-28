@@ -42,6 +42,9 @@
                             <Label Text="Lait / Yaourt / Fromage..." TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="14"/>
                         </StackLayout>
                     </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="LaitiersTapped"/>
+                    </Frame.GestureRecognizers>
                 </Frame>
 
                 <!-- Produits sucrés -->
@@ -53,6 +56,7 @@
                             <Label Text="Biscuits / Chocolat / Biscuits..." TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="14"/>
                         </StackLayout>
                     </Grid>
+                    
                 </Frame>
 
                 <!-- Épicerie salée -->
@@ -64,6 +68,9 @@
                             <Label Text="Riz / Pâtes / Conserves..." TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="14"/>
                         </StackLayout>
                     </Grid>
+                    <!-- <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SaleTapped"/>
+                    </Frame.GestureRecognizers> -->
                 </Frame>
 
                 <!-- Produits d’hygiène (clic pour ouvrir HygienePage) -->
@@ -89,6 +96,9 @@
                             <Label Text="Jus / Eau minérale / Soda..." TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="14"/>
                         </StackLayout>
                     </Grid>
+                    <!--<Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BoissonsTapped"/>
+                    </Frame.GestureRecognizers> -->
                 </Frame>
 
                 <!-- Conserves et sauces -->
@@ -100,6 +110,9 @@
                             <Label Text="Conserve de thon / Ketchup..." TextColor="{AppThemeBinding Light=White, Dark=Black}" FontSize="14"/>
                         </StackLayout>
                     </Grid>
+                   <!-- <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SaucesTapped"/>
+                    </Frame.GestureRecognizers> -->
                 </Frame>
 
             </VerticalStackLayout>
